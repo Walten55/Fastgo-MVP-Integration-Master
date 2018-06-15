@@ -1,5 +1,6 @@
-<h2 align="center">Fastgo 懒人程序员的福音，能够在瞬间完成APP框架建设，不费吹灰之力就能创建一个MVP+Dagger2+Retrofit+RxJava的APP。</h2>
 ## 简介 
+   <h2 align="center">Fastgo 能够在瞬间创建一个MVP+Dagger2+Retrofit+RxJava的Android Project。</h2>
+   
    
 ## 使用 
 ```

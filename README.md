@@ -27,15 +27,15 @@ Maven:
 </dependency>
 
 ```
-![1](screenshot/1.png)
-![2](screenshot/2.png)
-![3](screenshot/3.png)
-![4](screenshot/4.png)
-![5](screenshot/5.png)
-![6](screenshot/6.png)
-![7](screenshot/7.png)
-![8](screenshot/8.png)
-![9](screenshot/9.png)
+![1](screenshot/1.png)<br/>
+![2](screenshot/2.png)<br/>
+![3](screenshot/3.png)<br/>
+![4](screenshot/4.png)<br/>
+![5](screenshot/5.png)<br/>
+![6](screenshot/6.png)<br/>
+![7](screenshot/7.png)<br/>
+![8](screenshot/8.png)<br/>
+![9](screenshot/9.png)<br/>
 
 ## 更新
 * 2018-06-15 框架首次发布

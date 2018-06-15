@@ -1,14 +1,25 @@
 ## 简介 
-
+   Fastgo 懒人程序员的福音，能够在瞬间完成APP框架建设，不费吹灰之力就能创建一个Retrofit+RxJava+Dagger2的APP。
 ## 使用 
+```
+* **Gradle** 
+compile 'me.walten:fastgo:1.0.7'
+* **Maven** 
+<dependency>
+  <groupId>me.walten</groupId>
+  <artifactId>fastgo</artifactId>
+  <version>1.0.7</version>
+  <type>pom</type>
+</dependency>
 
+```
 ## 更新
 * 2018-06-15 框架首次发布
 
 ## 打赏
 <div align="center">
    <img src="screenshot/weixin.png" height="360" width=300" >
-   或
+   
    <img src="screenshot/alipay.png" height="360" width="300" >
 </div>
 

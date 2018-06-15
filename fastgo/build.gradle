@@ -1,0 +1,96 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 100
+        versionName "1.0.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //路由需要
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']//将so文件目录指向libs目录
+        }
+    }
+}
+
+dependencies {
+    //base
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["design"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+    api rootProject.ext.dependencies["cardview-v7"]
+    //rx
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["rxpermissions"]
+    api rootProject.ext.dependencies["rxbus"]
+    //network
+    api rootProject.ext.dependencies["gson"]
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["retrofit-converter-gson"]
+    api rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["okhttp-logging-interceptor"]
+    api rootProject.ext.dependencies["jsoup"]
+    //api rootProject.ext.dependencies["glide"]//按需添加
+    //annotationProcessor rootProject.ext.dependencies["glide-compiler"]//按需添加
+
+    //di
+    api rootProject.ext.dependencies["dagger"]
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    api rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    provided rootProject.ext.dependencies["annotation"]
+
+    //fragmentation
+    api rootProject.ext.dependencies["fragmentation"]
+
+    //router
+    //api rootProject.ext.dependencies["arouter"]//按需添加
+    //annotationProcessor rootProject.ext.dependencies["arouter-compiler"]//按需添加
+
+    //api rootProject.ext.dependencies["RxCache"]//按需添加
+    //api rootProject.ext.dependencies["RxCache-gson"]//按需添加
+
+    //
+    api rootProject.ext.dependencies["rxlifecycle"]
+    api rootProject.ext.dependencies["rxlifecycle-android"]
+    api rootProject.ext.dependencies["rxlifecycle-components"]
+
+    //
+    api rootProject.ext.dependencies["android-utils"]
+    api rootProject.ext.dependencies["logger"]
+
+    //
+    api rootProject.ext.dependencies["barlibrary"]
+
+}
+
+//与android、dependencies在同一级
+publish {
+    userOrg = 'walten1023'// 组织名
+    groupId = 'me.walten'// 包名、
+    artifactId = 'fastgo'// library的名字
+    version = '1.0.7'// 版本
+    description = 'Fast build app by MVP+Dagger2+Retrofit'
+    website = "https://github.com/Walten55/Fastgo-MVP-Integration-Master"
+    repoName = 'Fastgo-MVP-Integration-Master'//repository name
+
+}
+

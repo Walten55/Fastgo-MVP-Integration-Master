@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<template
+    format="2"
+    revision="2"
+    name="基础目录结构创建"
+    minApi="7"
+    minBuildApi="14"
+    description="每个APP仅需使用'基础目录结构创建'一次">
+
+    <category value="Fastgo" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <execute file="recipe.xml.ftl" />
+
+</template>  

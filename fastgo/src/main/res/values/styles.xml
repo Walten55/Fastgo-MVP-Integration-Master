@@ -1,0 +1,22 @@
+<resources>
+
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:screenOrientation">portrait</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:listDivider">@drawable/divider</item>
+        <item name="android:animationDuration">0</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:actionMenuTextColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="NoTitleFullscreen" parent="BaseAppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fastgo</string>
+
+    <string name="empty_data"></string>
+    <string name="error_data"></string>
+
+</resources>

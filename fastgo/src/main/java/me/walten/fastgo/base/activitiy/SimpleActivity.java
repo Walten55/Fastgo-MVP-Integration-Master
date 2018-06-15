@@ -1,0 +1,155 @@
+package me.walten.fastgo.base.activitiy;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.WindowManager;
+
+import com.blankj.utilcode.util.KeyboardUtils;
+import com.gyf.barlibrary.ImmersionBar;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+import me.walten.fastgo.base.IPage;
+import me.walten.fastgo.base.mvp.BaseView;
+import me.yokeyword.fragmentation.SupportActivity;
+
+/*
+ * -----------------------------------------------------------------
+ * Copyright by Walten, All rights reserved.
+ * -----------------------------------------------------------------
+ * desc：
+ * -----------------------------------------------------------------
+ * 2018/5/24 : Create SimpleActivity.java (Walten);
+ * -----------------------------------------------------------------
+ */
+public abstract class SimpleActivity extends SupportActivity implements BaseView, IPage {
+
+    protected Activity mContext;
+
+    private Unbinder mUnBinder;
+
+    protected boolean updateOnResume;
+
+    protected ImmersionBar mImmersionBar;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(getLayoutResId());
+        mUnBinder = ButterKnife.bind(this);
+        mContext = this;
+
+        mImmersionBar = ImmersionBar.with(this);
+        if (enableImmersive(mImmersionBar)) {
+            //利用一个BUG实现沉浸式状态栏
+            //setFullScreen();
+            //cancelFullScreen();
+
+            mImmersionBar.init();   //所有子类都将继承这些相同的属性
+        }
+
+        initView(savedInstanceState);
+
+        initData(savedInstanceState);
+
+    }
+
+    /**
+     * 是否允许沉浸式
+     *
+     * @return
+     */
+    protected abstract boolean enableImmersive(ImmersionBar immersionBar);
+
+    /**
+     * 取消全屏
+     */
+    protected void cancelFullScreen() {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN, WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+    }
+
+    /**
+     * 设置全屏
+     */
+    protected void setFullScreen() {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        KeyboardUtils.hideSoftInput(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUnBinder.unbind();
+        if (mImmersionBar != null)
+            mImmersionBar.destroy();
+    }
+
+    /**
+     * 提示框
+     *
+     * @param msg
+     */
+    public void showTipDialog(int opsStatus, String msg) {
+
+    }
+
+    /**
+     * 提示框
+     *
+     * @param msg
+     */
+    public void showTipDialog(String msg) {
+
+    }
+
+    /**
+     * 加载框
+     *
+     * @param msg
+     */
+    public void startWaiting(String msg) {
+
+    }
+
+    /**
+     * 隐藏加载框
+     */
+    @Override
+    public void stopWaiting() {
+
+    }
+
+    /**
+     * 吐司
+     *
+     * @param opsStatus
+     * @param msg
+     */
+    @Override
+    public void showToast(int opsStatus, String msg) {
+
+    }
+
+    /**
+     * 吐司
+     *
+     * @param msg
+     */
+    @Override
+    public void showToast(String msg) {
+
+    }
+
+
+}

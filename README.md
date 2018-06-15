@@ -6,7 +6,11 @@
 * 2018-06-15 框架首次发布
 
 ## 打赏
-![alipay](screenshot/alipay.jpg) ![weixin](screenshot/weixin.jpg)
+<div align="center">
+   <img src="screenshot/weixin.jpg" height="330" width="210" >
+   或
+   <img src="screenshot/alipay.jpg" height="330" width="210" >
+</div>
 
 ## 关于我
 * **Email**: <wtf55@vip.qq.com>  

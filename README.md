@@ -1,15 +1,18 @@
-![Logo](image/arms_banner_v1.0.jpg)
+## 简介 
 
-## Update
-* Tuesday, 26 September 2017: [**Cache**](https://github.com/JessYanCoding/MVPArms/blob/master/arms/src/main/java/com/jess/arms/integration/cache/)
+## 使用 
 
-## Acknowledgements 
-Thanks to all the three libraries used in this framework **Author**, and all for the **Open Sourece** selfless contributions **Developer** and **Organizations**, so that we can better work and study, I will also spare time return to the open source community
+## 更新
+* 2018-06-15 框架首次发布
 
-## Donate
-![alipay](image/pay_alipay.jpg) ![](image/pay_wxpay.jpg)
+## 打赏
+<div align="center">
+   <img src="screenshot/weixin.jpg" height="330" width="210" >
+   或
+   <img src="screenshot/alipay.jpg" height="330" width="210" >
+</div>
 
-## About Me
+## 关于我
 * **Email**: <wtf55@vip.qq.com>  
 
 ## License

@@ -1,16 +1,17 @@
 ## 简介 
-   <h2 align="center">Fastgo 能够在瞬间创建一个MVP+Dagger2+Retrofit+RxJava的Android Project。</h2>
+   <h4 align="center">Fastgo 能够在瞬间创建一个MVP+Dagger2+Retrofit+RxJava的Android Project。</h4>
    
-   Fastgo 确切的说是在多个项目中提炼出来的一个开发思想，简化创建新项目中做的重复步骤，让开发者专注业务开发。
+   Fastgo 确切的说是在多个项目中提炼出来的一个开发思想，简化创建新项目中做的重复步骤，让开发者专注业务开发。<br/>
    
-   *Fastgo 能做什么事情？
-   *1、能够快速搭建一个MVP思想的代码目录及基础类
-   *2、创建Activity 、Fragment时生成相对应的Contact和Presenter
-   *3、全局生命周期代理包含Application、Activity、Fragment
-   *4、简单的Android屏幕碎片化方案
-   *5、优化Dagger2使用流程，降低使用的学习成本
-   *6、集合了众多优秀第三方库，开发者可以自行配置引入使用
-   *7、。。。
+   Fastgo 能做什么事情？<br/>
+   
+   1、能够快速搭建一个MVP思想的代码目录及基础类<br/>
+   2、创建Activity 、Fragment时生成相对应的Contact和Presenter<br/>
+   3、全局生命周期代理包含Application、Activity、Fragment<br/>
+   4、简单的Android屏幕碎片化方案<br/>
+   5、优化Dagger2使用流程，降低使用的学习成本<br/>
+   6、集合了众多优秀第三方库，开发者可以自行配置引入使用<br/>
+   7、。。。<br/>
    
 ## 使用 
 ```

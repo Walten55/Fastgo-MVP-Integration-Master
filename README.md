@@ -7,9 +7,9 @@
 
 ## 打赏
 <div align="center">
-   <img src="screenshot/weixin.jpg" height="330" width="210" >
+   <img src="screenshot/weixin.png" height="360" width=300" >
    或
-   <img src="screenshot/alipay.jpg" height="330" width="210" >
+   <img src="screenshot/alipay.png" height="360" width="300" >
 </div>
 
 ## 关于我

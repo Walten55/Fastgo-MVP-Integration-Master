@@ -27,10 +27,14 @@ Maven:
 </dependency>
 
 ```
+1、创建一个空项目
 ![1](screenshot/1.png)<br/>
 ![2](screenshot/2.png)<br/>
+2、拷贝config.gralde(按需引入你需要的第三方库)到你的项目中
 ![3](screenshot/3.png)<br/>
+3、执行安装脚本
 ![4](screenshot/4.png)<br/>
+4、接下来就可以创建啦
 ![5](screenshot/5.png)<br/>
 ![6](screenshot/6.png)<br/>
 ![7](screenshot/7.png)<br/>

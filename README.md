@@ -16,7 +16,7 @@
 ## 使用 
 ```
 Gradle:
-compile 'me.walten:fastgo:1.0.7'
+compile 'me.walten:fastgo:1.0.8'
 
 Maven:
 <dependency>
@@ -43,6 +43,7 @@ Maven:
 
 ## 更新
 * 2018-06-15 框架首次发布
+* 2018-06-21 修复使用BuildConfig.debug 一直都为false 无法打印日志的的bug，并优化APPModel模板
 
 ## 打赏
 <div align="center">

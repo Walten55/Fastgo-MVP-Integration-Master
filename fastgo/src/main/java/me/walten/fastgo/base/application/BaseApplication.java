@@ -9,6 +9,7 @@ import com.blankj.utilcode.util.Utils;
 
 import java.util.List;
 
+import me.walten.fastgo.common.Fastgo;
 import me.walten.fastgo.delegate.AppDelegateImpl;
 import me.walten.fastgo.delegate.IAppDelegate;
 import me.walten.fastgo.di.component.AppComponent;
@@ -70,6 +71,9 @@ public class BaseApplication extends Application implements IApp {
         //ARouter.init(this);
 
         Utils.init(this);
+
+        Fastgo.init(this);
+        Fastgo.printLog(true);
     }
 
     /**
@@ -80,6 +84,7 @@ public class BaseApplication extends Application implements IApp {
         super.onTerminate();
         if (mAppDelegate != null)
             this.mAppDelegate.onTerminate(this);
+        Fastgo.release();
     }
 
     @NonNull

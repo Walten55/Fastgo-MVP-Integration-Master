@@ -1,4 +1,4 @@
-package me.walten.fastgo.demo.model.http;
+package me.walten.fastgo.demo.model.remote;
 
 import java.util.Map;
 

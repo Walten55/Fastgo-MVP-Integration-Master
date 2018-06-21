@@ -31,7 +31,8 @@ public class MainPresenter extends MainContract.Presenter {
 
     @Override
     void getWeather(String city) {
-        mModel.getWeather(city, new Consumer<Object>() {
+        mModel.getRemoteModel()
+                .getWeather(city, new Consumer<Object>() {
             @Override
             public void accept(Object o) throws Exception {
                 mView.resultWeather(o);

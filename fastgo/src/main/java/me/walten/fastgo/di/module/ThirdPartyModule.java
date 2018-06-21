@@ -16,7 +16,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import me.walten.fastgo.BuildConfig;
+import me.walten.fastgo.common.Fastgo;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.HttpUrl;
@@ -59,15 +59,13 @@ public class ThirdPartyModule {
                              HttpUrl httpUrl) {
 
 
-        builder
-                .baseUrl(httpUrl)//域名
+        builder.baseUrl(httpUrl)//域名
                 .client(client);//设置okhttp
 
         if (configuration != null) {
             configuration.configRetrofit(application, builder);
         } else {
-            builder
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//使用 Rxjava
+            builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create())//使用 Rxjava
                     .addConverterFactory(GsonConverterFactory.create(new Gson()));//使用 Gson
         }
 
@@ -93,7 +91,7 @@ public class ThirdPartyModule {
         if (configuration != null)
             configuration.configOkhttp(application, builder);
         else {
-            if (BuildConfig.DEBUG) {
+            if (Fastgo.isPrintLog()) {
                 HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
                 loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
                 builder.addInterceptor(loggingInterceptor);

@@ -7,6 +7,7 @@ import java.io.File;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import me.walten.fastgo.common.Fastgo;
 import me.walten.fastgo.delegate.AppDelegateImpl;
 import me.walten.fastgo.di.module.AppModule;
 import me.walten.fastgo.di.module.GlobalConfigModule;
@@ -60,4 +61,11 @@ public interface AppComponent {
      * @param appDelegate
      */
     void inject(AppDelegateImpl appDelegate);
+
+    /**
+     * 注入到Fastgo
+     *
+     * @param fastgo
+     */
+    void inject(Fastgo fastgo);
 }

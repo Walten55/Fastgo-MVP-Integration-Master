@@ -7,11 +7,11 @@
 
        <mkdir at="${escapeXmlAttribute(srcOut)}/di/module" />
 
-       <mkdir at="${escapeXmlAttribute(srcOut)}/model/db" />
+       <mkdir at="${escapeXmlAttribute(srcOut)}/model/local" />
 
        <mkdir at="${escapeXmlAttribute(srcOut)}/model/entity" />
 
-       <mkdir at="${escapeXmlAttribute(srcOut)}/model/http" />
+       <mkdir at="${escapeXmlAttribute(srcOut)}/model/remote" />
 
        <mkdir at="${escapeXmlAttribute(srcOut)}/view" />
 

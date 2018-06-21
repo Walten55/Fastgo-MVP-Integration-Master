@@ -23,6 +23,15 @@
     <instantiate from="src/app_package/classes/APPModel.java.ftl"
                        to="${escapeXmlAttribute(srcOut)}/model/APPModel.java" />
 
+    <instantiate from="src/app_package/classes/APIService.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/model/remote/APIService.java" />
+
+    <instantiate from="src/app_package/classes/RemoteModel.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/model/remote/RemoteModel.java" />
+
+    <instantiate from="src/app_package/classes/LocalModel.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/model/local/LocalModel.java" />
+
     <merge from="AndroidManifest.xml.ftl" to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
 
 </recipe>

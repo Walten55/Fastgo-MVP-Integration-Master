@@ -1,41 +1,34 @@
 package me.walten.fastgo.demo.model;
 
-import android.util.ArrayMap;
-
-import java.util.Map;
-
 import javax.inject.Inject;
 
-import io.reactivex.Flowable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
-import me.walten.fastgo.base.mvp.BaseModel;
 import me.walten.fastgo.base.mvp.IModel;
-import me.walten.fastgo.demo.model.entity.Result;
-import me.walten.fastgo.demo.model.http.APIService;
-import me.walten.fastgo.integration.IRepositoryManager;
-import me.walten.fastgo.utils.RxUtil;
+import me.walten.fastgo.demo.model.local.LocalModel;
+import me.walten.fastgo.demo.model.remote.RemoteModel;
 
-public class APPModel extends BaseModel implements IModel {
+public class APPModel implements IModel{
 
+    private RemoteModel remoteModel;
+    private LocalModel localModel;
     @Inject
-    public APPModel(IRepositoryManager repositoryManager) {
-        super(repositoryManager);
+    public APPModel(RemoteModel remoteModel, LocalModel localModel) {
+        this.remoteModel = remoteModel;
+        this.localModel = localModel;
     }
 
-    public void getWeather(String city,Consumer<Object> consumer){
-        Map<String,Object> params = new ArrayMap<>();
-        params.put("city",city);
+    public RemoteModel getRemoteModel() {
+        return remoteModel;
+    }
 
-        addSubscribe(mRepositoryManager.obtainRetrofitService(APIService.class)
-                .weatherApi(params)
-                .compose(RxUtil.<Result<Object>>getHttpDefaultScheduler())
-                .compose(RxUtil.getHandleResultDefault(new Function<Result<Object>, Flowable<Object>>() {
-                    @Override
-                    public Flowable<Object> apply(Result<Object> objectResponse) throws Exception {
-                        return RxUtil.formatResult(objectResponse.getData());
-                    }
-                }))
-                .subscribe(consumer));
+    public LocalModel getLocalModel() {
+        return localModel;
+    }
+
+    @Override
+    public void destory() {
+        if(remoteModel!=null)
+            remoteModel.destory();
+        if(localModel!=null)
+            localModel.destory();
     }
 }

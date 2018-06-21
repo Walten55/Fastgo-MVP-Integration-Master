@@ -2,21 +2,33 @@ package ${packageName}.model;
 
 import javax.inject.Inject;
 
-import io.reactivex.Flowable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
-import me.walten.fastgo.base.mvp.BaseModel;
-import me.walten.fastgo.base.mvp.BaseView;
 import me.walten.fastgo.base.mvp.IModel;
-import me.walten.fastgo.integration.IRepositoryManager;
-import me.walten.fastgo.utils.RxLifecycleUtil;
-import me.walten.fastgo.utils.RxUtil;
+import ${packageName}.model.local.LocalModel;
+import ${packageName}.model.remote.RemoteModel;
 
-public class APPModel extends BaseModel implements IModel{
+public class APPModel implements IModel{
 
+    private RemoteModel remoteModel;
+    private LocalModel localModel;
     @Inject
-    public APPModel(IRepositoryManager repositoryManager) {
-        super(repositoryManager);
+    public APPModel(RemoteModel remoteModel, LocalModel localModel) {
+        this.remoteModel = remoteModel;
+        this.localModel = localModel;
     }
 
+    public RemoteModel getRemoteModel() {
+        return remoteModel;
+    }
+
+    public LocalModel getLocalModel() {
+        return localModel;
+    }
+
+    @Override
+    public void destory() {
+        if(remoteModel!=null)
+            remoteModel.destory();
+        if(localModel!=null)
+            localModel.destory();
+    }
 }

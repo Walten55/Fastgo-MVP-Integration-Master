@@ -10,7 +10,7 @@ import me.walten.fastgo.integration.IRepositoryManager;
 public class RemoteModel extends BaseModel implements IModel{
 
     @Inject
-    public APPModel(IRepositoryManager repositoryManager) {
+    public RemoteModel(IRepositoryManager repositoryManager) {
         super(repositoryManager);
     }
 

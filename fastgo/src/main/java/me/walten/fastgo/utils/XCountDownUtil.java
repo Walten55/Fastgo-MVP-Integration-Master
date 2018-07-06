@@ -10,7 +10,7 @@ import android.os.CountDownTimer;
  * 2018/5/24 : Create CountDownUtil.java (Walten);
  * -----------------------------------------------------------------
  */
-public class CountDownUtil {
+public class XCountDownUtil {
     /**
      * 倒计时结束的回调接口
      */
@@ -45,15 +45,15 @@ public class CountDownUtil {
      * 获取 CountDownTimerUtils
      * @return CountDownTimerUtils
      */
-    public static CountDownUtil getCountDownTimer() {
-        return new CountDownUtil();
+    public static XCountDownUtil getCountDownTimer() {
+        return new XCountDownUtil();
     }
     /**
      * 设置定期回调的时间 调用{@link #setTickDelegate(TickDelegate)}
      * @param pCountDownInterval 定期回调的时间 必须大于0
      * @return CountDownTimerUtils
      */
-    public CountDownUtil setCountDownInterval(long pCountDownInterval) {
+    public XCountDownUtil setCountDownInterval(long pCountDownInterval) {
         this.mCountDownInterval=pCountDownInterval;
         return this;
     }
@@ -62,7 +62,7 @@ public class CountDownUtil {
      * @param pFinishDelegate 倒计时结束的回调接口
      * @return CountDownTimerUtils
      */
-    public CountDownUtil setFinishDelegate(FinishDelegate pFinishDelegate) {
+    public XCountDownUtil setFinishDelegate(FinishDelegate pFinishDelegate) {
         this.mFinishDelegate=pFinishDelegate;
         return this;
     }
@@ -71,7 +71,7 @@ public class CountDownUtil {
      * @param pMillisInFuture 总倒计时时间
      * @return CountDownTimerUtils
      */
-    public CountDownUtil setMillisInFuture(long pMillisInFuture) {
+    public XCountDownUtil setMillisInFuture(long pMillisInFuture) {
         this.mMillisInFuture=pMillisInFuture;
         return this;
     }
@@ -80,7 +80,7 @@ public class CountDownUtil {
      * @param pTickDelegate 定期回调接口
      * @return CountDownTimerUtils
      */
-    public CountDownUtil setTickDelegate(TickDelegate pTickDelegate) {
+    public XCountDownUtil setTickDelegate(TickDelegate pTickDelegate) {
         this.mTickDelegate=pTickDelegate;
         return this;
     }

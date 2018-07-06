@@ -25,6 +25,6 @@ public class ${presenterClass} extends ${contractClass}.Presenter {
     @Override
     public void detachView() {
         mView = null;
-        mModel.destory();
+        mModel.destroy();
     }
 }

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import me.walten.fastgo.R;
 import me.walten.fastgo.base.mvp.IPresenter;
 import me.walten.fastgo.base.mvp.DataStatusView;
-import me.walten.fastgo.utils.PreconditionsUtil;
+import me.walten.fastgo.utils.XPreconditionsUtil;
 
 
 /*
@@ -45,13 +45,30 @@ public abstract class StatusActivity<T extends IPresenter> extends MVPActivity<T
      */
     protected abstract int getMainViewId();
 
+    /**
+     *
+     * @return int[2]  0:emptyImageId 1:errorImageId
+     */
+    protected int[] getStatusImageId(){
+        return new int[]{R.drawable.icon_cammon_data,R.drawable.icon_cammon_load};
+    }
+
+    /**
+     *
+     * @return int[2]  0:emptyMessage 1:errorMessage
+     */
+    protected String[] getStatusMessage(){
+        return new String[]{"<font color=\"#bdbdbd\">暂无数据,</font><font color=\"#e83535\">刷新试试</font>",
+        "<font color=\"#bdbdbd\">加载失败,</font><font color=\"#e83535\">重新加载</font>"};
+    }
+
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
         viewMain = findViewById(getMainViewId());
 
-        PreconditionsUtil.checkNotNull(viewMain,"必须提供有效的主布局ID");
+        XPreconditionsUtil.checkNotNull(viewMain,"必须提供有效的主布局ID");
 
-        PreconditionsUtil.checkState(viewMain.getParent() instanceof ViewGroup, "'主布局'的父布局必须是ViewGroup");
+        XPreconditionsUtil.checkState(viewMain.getParent() instanceof ViewGroup, "'主布局'的父布局必须是ViewGroup");
 
         mParent = (ViewGroup) viewMain.getParent();
         View.inflate(mContext, R.layout.view_progress, mParent);
@@ -84,19 +101,19 @@ public abstract class StatusActivity<T extends IPresenter> extends MVPActivity<T
             isErrorViewAdded = true;
             View.inflate(mContext, mErrorResource, mParent);
             viewError = mParent.findViewById(R.id.view_error);
-            PreconditionsUtil.checkNotNull(viewError,"'view_error' 布局错误");
+            XPreconditionsUtil.checkNotNull(viewError,"'view_error' 布局错误");
         }
         hideCurrentView();
         currentSTATUS = STATUS_ERROR;
         ImageView errorIcon = (ImageView) viewError.findViewById(R.id.error_icon);
         TextView errorMsg = (TextView) viewError.findViewById(R.id.error_message);
         if(empty){
-            String msg = "<font color=\"#bdbdbd\">暂无数据,</font><font color=\"#e83535\">刷新试试</font>";
-            errorIcon.setImageResource(R.drawable.icon_cammon_data);
+            String msg = getStatusMessage()[0];
+            errorIcon.setImageResource(getStatusImageId()[0]);
             errorMsg.setText(Html.fromHtml(msg));
         }else {
-            String msg = "<font color=\"#bdbdbd\">加载失败,</font><font color=\"#e83535\">重新加载</font>";
-            errorIcon.setImageResource(R.drawable.icon_cammon_load);
+            String msg = getStatusMessage()[1];
+            errorIcon.setImageResource(getStatusImageId()[1]);
             errorMsg.setText(Html.fromHtml(msg));
         }
         viewError.setVisibility(View.VISIBLE);

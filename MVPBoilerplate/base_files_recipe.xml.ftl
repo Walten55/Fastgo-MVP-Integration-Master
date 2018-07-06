@@ -32,6 +32,18 @@
     <instantiate from="src/app_package/classes/LocalModel.java.ftl"
                        to="${escapeXmlAttribute(srcOut)}/model/local/LocalModel.java" />
 
+    <instantiate from="src/app_package/classes/XMVPActivity.java.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/base/XMVPActivity.java" />
+
+    <instantiate from="src/app_package/classes/XMVPFragment.java.ftl"
+                           to="${escapeXmlAttribute(srcOut)}/base/XMVPFragment.java" />
+
+    <instantiate from="src/app_package/classes/XSimpleActivity.java.ftl"
+                           to="${escapeXmlAttribute(srcOut)}/base/XSimpleActivity.java" />
+
+    <instantiate from="src/app_package/classes/XSimpleFragment.java.ftl"
+                           to="${escapeXmlAttribute(srcOut)}/base/XSimpleFragment.java" />
+
     <merge from="AndroidManifest.xml.ftl" to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
 
 </recipe>

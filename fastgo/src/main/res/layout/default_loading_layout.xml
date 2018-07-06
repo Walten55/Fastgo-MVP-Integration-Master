@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.walten.fastgo.progress.BackgroundLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/background"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/grid_16"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/label"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/grid_16"
+            android:layout_marginTop="@dimen/grid_8"
+            android:layout_marginBottom="@dimen/grid_4"/>
+
+        <TextView
+            android:id="@+id/details_label"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/grid_14"/>
+    </LinearLayout>
+</me.walten.fastgo.progress.BackgroundLayout>

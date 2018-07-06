@@ -11,7 +11,7 @@ import android.widget.TextView;
 import me.walten.fastgo.R;
 import me.walten.fastgo.base.mvp.IPresenter;
 import me.walten.fastgo.base.mvp.DataStatusView;
-import me.walten.fastgo.utils.PreconditionsUtil;
+import me.walten.fastgo.utils.XPreconditionsUtil;
 
 /*
  * -----------------------------------------------------------------
@@ -50,8 +50,8 @@ public abstract class StatusFragment<T extends IPresenter> extends MVPFragment<T
             return;
         viewMain = getView().findViewById(getMainViewId());
 
-        PreconditionsUtil.checkNotNull(viewMain,"必须提供有效的主布局ID");
-        PreconditionsUtil.checkState(viewMain.getParent() instanceof ViewGroup, "'主布局'的父布局必须是ViewGroup");
+        XPreconditionsUtil.checkNotNull(viewMain,"必须提供有效的主布局ID");
+        XPreconditionsUtil.checkState(viewMain.getParent() instanceof ViewGroup, "'主布局'的父布局必须是ViewGroup");
 
         mParent = (ViewGroup) viewMain.getParent();
         View.inflate(mContext, R.layout.view_progress, mParent);
@@ -84,7 +84,7 @@ public abstract class StatusFragment<T extends IPresenter> extends MVPFragment<T
             isErrorViewAdded = true;
             View.inflate(mContext, mErrorResource, mParent);
             viewError = mParent.findViewById(R.id.view_error);
-            PreconditionsUtil.checkNotNull(viewError,"'view_error' 布局错误");
+            XPreconditionsUtil.checkNotNull(viewError,"'view_error' 布局错误");
         }
         hideCurrentView();
         currentSTATUS = STATUS_ERROR;

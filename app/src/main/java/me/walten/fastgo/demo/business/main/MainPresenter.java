@@ -26,7 +26,7 @@ public class MainPresenter extends MainContract.Presenter {
     @Override
     public void detachView() {
         mView = null;
-        mModel.destory();
+        mModel.destroy();
     }
 
     @Override

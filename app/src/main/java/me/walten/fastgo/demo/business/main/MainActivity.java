@@ -13,6 +13,7 @@ import me.walten.fastgo.demo.R;
 import me.walten.fastgo.demo.di.component.DaggerActivityComponent;
 import me.walten.fastgo.demo.di.module.ActivityModule;
 import me.walten.fastgo.di.component.AppComponent;
+import me.walten.fastgo.progress.XProgress;
 
 public class MainActivity extends MVPActivity<MainPresenter> implements MainContract.View {
 
@@ -27,6 +28,11 @@ public class MainActivity extends MVPActivity<MainPresenter> implements MainCont
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
         loadRootFragment(R.id.fl_container,new BannerFragment());
+        XProgress.create(this)
+                .setStyle(XProgress.Style.SPIN_INDETERMINATE)
+                .setLabel("Please wait")
+                .setCancellable(true).show();
+
     }
 
     @Override

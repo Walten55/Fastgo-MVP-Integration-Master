@@ -22,7 +22,7 @@ import javax.inject.Inject;
 
 import dagger.Lazy;
 import me.walten.fastgo.cache.LruCache;
-import me.walten.fastgo.utils.PreconditionsUtil;
+import me.walten.fastgo.utils.XPreconditionsUtil;
 import retrofit2.Retrofit;
 
 /*
@@ -57,7 +57,7 @@ public class RepositoryManager implements IRepositoryManager {
      */
     @Override
     public synchronized <T> T obtainRetrofitService(Class<T> service) {
-        PreconditionsUtil.checkNotNull(service,"service must be not null");
+        XPreconditionsUtil.checkNotNull(service,"service must be not null");
         if(mCache.get().get(CACHE_KEY_RETROFIT+service.getCanonicalName())==null){
             mCache.get().put(CACHE_KEY_RETROFIT+service.getCanonicalName(),mRetrofit.get().create(service));
         }

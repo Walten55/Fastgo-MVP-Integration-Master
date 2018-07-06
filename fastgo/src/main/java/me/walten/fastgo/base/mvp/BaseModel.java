@@ -30,7 +30,7 @@ public class BaseModel implements IModel{
     }
 
     @Override
-    public void destory() {
+    public void destroy() {
         unSubscribe();
     }
 }

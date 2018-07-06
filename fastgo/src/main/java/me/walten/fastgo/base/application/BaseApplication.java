@@ -13,7 +13,7 @@ import me.walten.fastgo.common.Fastgo;
 import me.walten.fastgo.delegate.AppDelegateImpl;
 import me.walten.fastgo.delegate.IAppDelegate;
 import me.walten.fastgo.di.component.AppComponent;
-import me.walten.fastgo.utils.PreconditionsUtil;
+import me.walten.fastgo.utils.XPreconditionsUtil;
 
 /*
  * -----------------------------------------------------------------
@@ -90,8 +90,8 @@ public class BaseApplication extends Application implements IApp {
     @NonNull
     @Override
     public AppComponent getAppComponent() {
-        PreconditionsUtil.checkNotNull(mAppDelegate, "%s cannot be null", AppDelegateImpl.class.getName());
-        PreconditionsUtil.checkState(mAppDelegate instanceof IApp, "%s must be implements %s", AppDelegateImpl.class.getName(), IApp.class.getName());
+        XPreconditionsUtil.checkNotNull(mAppDelegate, "%s cannot be null", AppDelegateImpl.class.getName());
+        XPreconditionsUtil.checkState(mAppDelegate instanceof IApp, "%s must be implements %s", AppDelegateImpl.class.getName(), IApp.class.getName());
         return ((IApp) mAppDelegate).getAppComponent();
     }
 }

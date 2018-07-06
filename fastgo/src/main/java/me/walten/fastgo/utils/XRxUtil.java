@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
  * 2018/5/28 : Create RxUtil.java (Walten);
  * -----------------------------------------------------------------
  */
-public class RxUtil {
+public class XRxUtil {
 
     /**
      * 默认网络请求线程是io线程 切换 main线程

@@ -13,7 +13,7 @@ import me.walten.fastgo.base.mvp.BaseModel;
 import me.walten.fastgo.base.mvp.IModel;
 import me.walten.fastgo.demo.model.entity.Result;
 import me.walten.fastgo.integration.IRepositoryManager;
-import me.walten.fastgo.utils.RxUtil;
+import me.walten.fastgo.utils.XRxUtil;
 
 public class RemoteModel extends BaseModel implements IModel {
 
@@ -28,11 +28,11 @@ public class RemoteModel extends BaseModel implements IModel {
 
         addSubscribe(mRepositoryManager.obtainRetrofitService(APIService.class)
                 .weatherApi(params)
-                .compose(RxUtil.<Result<Object>>getHttpDefaultScheduler())
-                .compose(RxUtil.getHandleResultDefault(new Function<Result<Object>, Flowable<Object>>() {
+                .compose(XRxUtil.<Result<Object>>getHttpDefaultScheduler())
+                .compose(XRxUtil.getHandleResultDefault(new Function<Result<Object>, Flowable<Object>>() {
                     @Override
                     public Flowable<Object> apply(Result<Object> objectResponse) throws Exception {
-                        return RxUtil.formatResult(objectResponse.getData());
+                        return XRxUtil.formatResult(objectResponse.getData());
                     }
                 }))
                 .subscribe(consumer));

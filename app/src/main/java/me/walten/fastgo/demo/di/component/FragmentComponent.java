@@ -15,4 +15,5 @@ public interface FragmentComponent {
     Activity getActivity();
 
     void inject(BannerFragment bannerFragment);
+
 }

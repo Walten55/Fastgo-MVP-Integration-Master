@@ -1,7 +1,7 @@
 ext {
 
     def dependVersion = [
-            support         : "26.0.2",
+            support         : "27.1.1",
             retrofit        : "2.3.0",
             okhttp          : "3.8.1",
             dagger2         : "2.16",

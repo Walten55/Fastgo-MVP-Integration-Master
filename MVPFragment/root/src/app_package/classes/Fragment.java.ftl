@@ -5,11 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
-import me.walten.fastgo.base.fragment.MVPFragment;
 import me.walten.fastgo.di.component.AppComponent;
 
 
-public class ${fragmentClass} extends MVPFragment<${presenterClass}> implements ${contractClass}.View
+public class ${fragmentClass} extends XMVPFragment<${presenterClass}> implements ${contractClass}.View
 {
 
 

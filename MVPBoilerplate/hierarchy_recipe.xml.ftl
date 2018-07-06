@@ -16,4 +16,6 @@
        <mkdir at="${escapeXmlAttribute(srcOut)}/view" />
 
        <mkdir at="${escapeXmlAttribute(srcOut)}/business" />
+
+       <mkdir at="${escapeXmlAttribute(srcOut)}/base" />
 </recipe>

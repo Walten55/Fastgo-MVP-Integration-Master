@@ -25,10 +25,10 @@ public class APPModel implements IModel{
     }
 
     @Override
-    public void destory() {
+    public void destroy() {
         if(remoteModel!=null)
-            remoteModel.destory();
+            remoteModel.destroy();
         if(localModel!=null)
-            localModel.destory();
+            localModel.destroy();
     }
 }

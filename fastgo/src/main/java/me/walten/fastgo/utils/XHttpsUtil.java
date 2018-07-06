@@ -22,7 +22,7 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 
-public class HttpsUtil
+public class XHttpsUtil
 {
     public static class SSLParams
     {

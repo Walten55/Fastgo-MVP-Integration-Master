@@ -25,6 +25,6 @@ public class BannerPresenter extends BannerContract.Presenter {
     @Override
     public void detachView() {
         mView = null;
-        mModel.destory();
+        mModel.destroy();
     }
 }

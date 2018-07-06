@@ -22,7 +22,7 @@ import me.walten.fastgo.di.module.GlobalConfigModule;
 import me.walten.fastgo.di.module.ThirdPartyModule;
 import me.walten.fastgo.integration.ConfigModule;
 import me.walten.fastgo.integration.ManifestParser;
-import me.walten.fastgo.utils.PreconditionsUtil;
+import me.walten.fastgo.utils.XPreconditionsUtil;
 /*
  * -----------------------------------------------------------------
  * Copyright by Walten, All rights reserved.
@@ -157,7 +157,7 @@ public class AppDelegateImpl implements IApp, IAppDelegate {
     @NonNull
     @Override
     public AppComponent getAppComponent() {
-        PreconditionsUtil.checkNotNull(mAppComponent,
+        XPreconditionsUtil.checkNotNull(mAppComponent,
                 "%s cannot be null,first call %s#onCreate(Application) in %s#onCreate()",
                 AppComponent.class.getName(), getClass().getName(), Application.class.getName());
         return mAppComponent;

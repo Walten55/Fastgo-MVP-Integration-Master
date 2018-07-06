@@ -2,6 +2,7 @@ package me.walten.fastgo.base.activitiy;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.view.WindowManager;
 
@@ -12,6 +13,8 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.walten.fastgo.base.IPage;
 import me.walten.fastgo.base.mvp.BaseView;
+import me.walten.fastgo.dialog.XTipDialog;
+import me.walten.fastgo.progress.XProgress;
 import me.yokeyword.fragmentation.SupportActivity;
 
 /*
@@ -32,6 +35,10 @@ public abstract class SimpleActivity extends SupportActivity implements BaseView
     protected boolean updateOnResume;
 
     protected ImmersionBar mImmersionBar;
+
+    protected XProgress xProgress;
+
+    private XTipDialog mTipDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -101,7 +108,24 @@ public abstract class SimpleActivity extends SupportActivity implements BaseView
      * @param msg
      */
     public void showTipDialog(int opsStatus, String msg) {
+        stopWaiting();
 
+        mTipDialog = new XTipDialog.Builder(this)
+                .setIconType(opsStatus)
+                .setTipWord(msg)
+                .create();
+        try {
+            if (!isFinishing())
+                mTipDialog.show();
+        } catch (Exception e) {
+
+        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mTipDialog.dismiss();
+            }
+        }, 1000);
     }
 
     /**
@@ -110,7 +134,7 @@ public abstract class SimpleActivity extends SupportActivity implements BaseView
      * @param msg
      */
     public void showTipDialog(String msg) {
-
+        showTipDialog(XTipDialog.Builder.ICON_TYPE_INFO, msg);
     }
 
     /**
@@ -119,7 +143,16 @@ public abstract class SimpleActivity extends SupportActivity implements BaseView
      * @param msg
      */
     public void startWaiting(String msg) {
+        stopWaiting();
+        mTipDialog = new XTipDialog.Builder(this)
+                .setIconType(XTipDialog.Builder.ICON_TYPE_LOADING)
+                .setTipWord(msg)
+                .create();
+        mTipDialog.setCancelable(false);
+        mTipDialog.setCanceledOnTouchOutside(false);
 
+        if (!isFinishing())
+            mTipDialog.show();
     }
 
     /**
@@ -127,7 +160,8 @@ public abstract class SimpleActivity extends SupportActivity implements BaseView
      */
     @Override
     public void stopWaiting() {
-
+        if (mTipDialog != null && mTipDialog.isShowing())
+            mTipDialog.dismiss();
     }
 
     /**

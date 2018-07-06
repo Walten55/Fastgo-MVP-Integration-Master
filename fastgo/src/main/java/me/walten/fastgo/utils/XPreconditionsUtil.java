@@ -11,9 +11,9 @@ import android.support.annotation.Nullable;
  * 2018/5/24 : Create Preconditions.java (Walten);
  * -----------------------------------------------------------------
  */
-public final class PreconditionsUtil {
+public final class XPreconditionsUtil {
 
-    private PreconditionsUtil() {
+    private XPreconditionsUtil() {
         throw new IllegalStateException("you can't instantiate me!");
     }
 

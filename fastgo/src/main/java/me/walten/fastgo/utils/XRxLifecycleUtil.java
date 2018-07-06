@@ -21,9 +21,9 @@ import me.walten.fastgo.integration.lifecycle.Lifecycleable;
  * 2018/5/24 : Create RxLifecycleUtil.java (Walten);
  * -----------------------------------------------------------------
  */
-public class RxLifecycleUtil {
+public class XRxLifecycleUtil {
 
-    private RxLifecycleUtil() {
+    private XRxLifecycleUtil() {
         throw new IllegalStateException("you can't instantiate me!");
     }
 
@@ -37,7 +37,7 @@ public class RxLifecycleUtil {
      */
     public static <T> LifecycleTransformer<T> bindUntilEvent(@NonNull final BaseView view,
                                                              final ActivityEvent event) {
-        PreconditionsUtil.checkNotNull(view, "view == null");
+        XPreconditionsUtil.checkNotNull(view, "view == null");
         if (view instanceof ActivityLifecycleable) {
             return bindUntilEvent((ActivityLifecycleable) view, event);
         } else {
@@ -55,7 +55,7 @@ public class RxLifecycleUtil {
      */
     public static <T> LifecycleTransformer<T> bindUntilEvent(@NonNull final BaseView view,
                                                              final FragmentEvent event) {
-        PreconditionsUtil.checkNotNull(view, "view == null");
+        XPreconditionsUtil.checkNotNull(view, "view == null");
         if (view instanceof FragmentLifecycleable) {
             return bindUntilEvent((FragmentLifecycleable) view, event);
         } else {
@@ -73,7 +73,7 @@ public class RxLifecycleUtil {
      */
     public static <T, R> LifecycleTransformer<T> bindUntilEvent(@NonNull final Lifecycleable<R> lifecycleable,
                                                                 final R event) {
-        PreconditionsUtil.checkNotNull(lifecycleable, "lifecycleable == null");
+        XPreconditionsUtil.checkNotNull(lifecycleable, "lifecycleable == null");
         return RxLifecycle.bindUntilEvent(lifecycleable.provideLifecycleSubject(), event);
     }
 
@@ -86,7 +86,7 @@ public class RxLifecycleUtil {
      * @return
      */
     public static <T> LifecycleTransformer<T> bindToLifecycle(@NonNull BaseView view) {
-        PreconditionsUtil.checkNotNull(view, "view == null");
+        XPreconditionsUtil.checkNotNull(view, "view == null");
         if (view instanceof Lifecycleable) {
             return bindToLifecycle((Lifecycleable) view);
         } else {
@@ -101,7 +101,7 @@ public class RxLifecycleUtil {
      * @return
      */
     public static <T> LifecycleTransformer<T> bindToLifecycle(@NonNull Lifecycleable lifecycleable) {
-        PreconditionsUtil.checkNotNull(lifecycleable, "lifecycleable == null");
+        XPreconditionsUtil.checkNotNull(lifecycleable, "lifecycleable == null");
         if (lifecycleable instanceof ActivityLifecycleable) {
             return RxLifecycleAndroid.bindActivity(((ActivityLifecycleable) lifecycleable).provideLifecycleSubject());
         } else if (lifecycleable instanceof FragmentLifecycleable) {

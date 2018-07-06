@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.walten.fastgo.demo">
+
     <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
@@ -22,14 +23,14 @@
             android:name="me.walten.fastgo.demo.configuration.GlobalConfiguration"
             android:value="ConfigModule" />
 
-        <activity android:name=".business.main.MainActivity"
-            >
+        <activity android:name=".business.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".business.hello.HelloActivity"></activity>
     </application>
 
 </manifest>

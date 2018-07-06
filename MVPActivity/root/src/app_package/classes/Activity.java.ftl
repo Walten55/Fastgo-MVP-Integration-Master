@@ -4,11 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import butterknife.BindView;
-import me.walten.fastgo.base.activitiy.MVPActivity;
 import me.walten.fastgo.di.component.AppComponent;
 import com.gyf.barlibrary.ImmersionBar;
 
-public class ${activityClass} extends MVPActivity<${presenterClass}> implements ${contractClass}.View {
+public class ${activityClass} extends XMVPActivity<${presenterClass}> implements ${contractClass}.View {
 
     @Override
     public int getLayoutResId() {

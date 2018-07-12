@@ -18,9 +18,49 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/grid_100"></FrameLayout>
 
-    <TextView
-        android:id="@+id/tv_msg"
+    <me.walten.fastgo.widget.itemView.XItemView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="@dimen/grid_45"
+        app:XItemView_type="NoOne"
+        app:XItemView_item_name="测试"
+        app:XItemView_line_color="@color/colorAccent"
+        ></me.walten.fastgo.widget.itemView.XItemView>
 
+    <me.walten.fastgo.widget.itemView.XItemView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grid_45"
+        app:XItemView_type="SingleMoreIcon"
+        app:XItemView_item_name="测试"
+        ></me.walten.fastgo.widget.itemView.XItemView>
+
+    <me.walten.fastgo.widget.itemView.XItemView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grid_45"
+        app:XItemView_type="SingleText"
+        app:XItemView_item_name="测试"
+        app:XItemView_background="@color/colorAccent"
+        app:XItemView_icon="@mipmap/ic_launcher"
+        ></me.walten.fastgo.widget.itemView.XItemView>
+
+    <me.walten.fastgo.widget.itemView.XItemView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grid_45"
+        app:XItemView_type="TextAndMoreIcon"
+        app:XItemView_item_name="测试"
+        app:XItemView_item_value="测试"
+        app:XItemView_item_name_color="@color/colorAccent"
+        app:XItemView_item_value_color="@color/colorAccent"
+        ></me.walten.fastgo.widget.itemView.XItemView>
+
+    <me.walten.fastgo.widget.itemView.XItemView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grid_45"
+        app:XItemView_type="Switch"
+        app:XItemView_item_name="测试"
+        ></me.walten.fastgo.widget.itemView.XItemView>
+
+
+    <me.walten.fastgo.widget.itemView.XItemViews
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></me.walten.fastgo.widget.itemView.XItemViews>
 </LinearLayout>

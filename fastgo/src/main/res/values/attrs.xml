@@ -10,4 +10,35 @@
         <attr name="x_togglePwdDrawableEnable" format="boolean"/>
         <attr name="x_pattern" format="string"/>
     </declare-styleable>
+
+    <attr name="XItemView_icon" format="reference"/>
+    <attr name="XItemView_item_name" format="string"/>
+    <attr name="XItemView_item_value" format="string"/>
+    <attr name="XItemView_more_icon" format="reference"/>
+    <attr name="XItemView_show_top_line" format="boolean"/>
+    <attr name="XItemView_show_bottom_line" format="boolean"/>
+    <attr name="XItemView_background" format="color"/>
+    <attr name="XItemView_item_name_color" format="color"/>
+    <attr name="XItemView_item_value_color" format="color"/>
+    <attr name="XItemView_line_color" format="color"/>
+    <attr name="XItemView_type" format="enum">
+        <enum name="NoOne" value="0"/>
+        <enum name="SingleText" value="1"/>
+        <enum name="SingleMoreIcon" value="2"/>
+        <enum name="TextAndMoreIcon" value="3"/>
+        <enum name="Switch" value="4"/>
+    </attr>
+    <declare-styleable name="XItemView">
+        <attr name="XItemView_icon"/>
+        <attr name="XItemView_item_name"/>
+        <attr name="XItemView_item_value"/>
+        <attr name="XItemView_more_icon"/>
+        <attr name="XItemView_type"/>
+        <attr name="XItemView_show_top_line"/>
+        <attr name="XItemView_show_bottom_line"/>
+        <attr name="XItemView_background"/>
+        <attr name="XItemView_item_name_color"/>
+        <attr name="XItemView_item_value_color"/>
+        <attr name="XItemView_line_color"/>
+    </declare-styleable>
 </resources>

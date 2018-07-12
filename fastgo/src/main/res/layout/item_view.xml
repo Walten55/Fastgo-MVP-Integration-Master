@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_item"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/grid_45"
+    android:background="#ffffff">
+
+    <View
+        android:id="@+id/line_top"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/line_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/grid_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_icon_item"
+            android:layout_width="@dimen/grid_25"
+            android:layout_height="@dimen/grid_25"
+            android:layout_marginRight="@dimen/grid_10"
+            android:src="@drawable/fastgo_icon_pic" />
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="item name"
+            android:textColor="#5c5c5c"
+            android:textSize="@dimen/grid_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/grid_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_item_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="value"
+            android:textColor="#cccccc"
+            android:textSize="@dimen/grid_16" />
+
+        <ViewStub
+            android:id="@+id/vs_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/vs_switch"
+            />
+
+        <ImageView
+            android:id="@+id/iv_icon_right"
+            android:layout_width="@dimen/grid_25"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fastgo_icon_more"
+            />
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

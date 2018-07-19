@@ -16,13 +16,13 @@
 ## 使用 
 ```
 Gradle:
-compile 'me.walten:fastgo:1.0.8'
+compile 'me.walten:fastgo:1.2.3'
 
 Maven:
 <dependency>
   <groupId>me.walten</groupId>
   <artifactId>fastgo</artifactId>
-  <version>1.0.7</version>
+  <version>1.2.3</version>
   <type>pom</type>
 </dependency>
 

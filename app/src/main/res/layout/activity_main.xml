@@ -1,66 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     >
 
-    <android.support.v7.widget.Toolbar
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/grid_48"
-        android:background="@color/colorPrimary"
-        ></android.support.v7.widget.Toolbar>
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是自己上不去排位，又想向别人炫耀怎么办？从化某高校的小邹看到了游戏代打广告，就联系了对方把微信账号给了过去。没想到等来的不是排位的提升，反而是"/>
 
-    <FrameLayout
-        android:id="@+id/fl_container"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/grid_100"></FrameLayout>
+    </ScrollView>
 
-    <me.walten.fastgo.widget.itemView.XItemView
+    <me.walten.fastgo.widget.titlebar.XTitleBar
         android:layout_width="match_parent"
-        android:layout_height="@dimen/grid_45"
-        app:XItemView_type="NoOne"
-        app:XItemView_item_name="测试"
-        app:XItemView_line_color="@color/colorAccent"
-        ></me.walten.fastgo.widget.itemView.XItemView>
+        android:layout_height="wrap_content"
+        app:titleBarColor="@color/colorPrimary"
+        app:fillStatusBar="false"
+        app:centerText="标题栏"
+        app:centerTextColor="#ffffff"
+        app:centerType="textView"
+        app:bottomShadowHeight="1.5dp"
+        app:showBottomLine="false"
+        >
 
-    <me.walten.fastgo.widget.itemView.XItemView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/grid_45"
-        app:XItemView_type="SingleMoreIcon"
-        app:XItemView_item_name="测试"
-        ></me.walten.fastgo.widget.itemView.XItemView>
-
-    <me.walten.fastgo.widget.itemView.XItemView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/grid_45"
-        app:XItemView_type="SingleText"
-        app:XItemView_item_name="测试"
-        app:XItemView_background="@color/colorAccent"
-        app:XItemView_icon="@mipmap/ic_launcher"
-        ></me.walten.fastgo.widget.itemView.XItemView>
-
-    <me.walten.fastgo.widget.itemView.XItemView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/grid_45"
-        app:XItemView_type="TextAndMoreIcon"
-        app:XItemView_item_name="测试"
-        app:XItemView_item_value="测试"
-        app:XItemView_item_name_color="@color/colorAccent"
-        app:XItemView_item_value_color="@color/colorAccent"
-        ></me.walten.fastgo.widget.itemView.XItemView>
-
-    <me.walten.fastgo.widget.itemView.XItemView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/grid_45"
-        app:XItemView_type="Switch"
-        app:XItemView_item_name="测试"
-        ></me.walten.fastgo.widget.itemView.XItemView>
+    </me.walten.fastgo.widget.titlebar.XTitleBar>
 
 
-    <me.walten.fastgo.widget.itemView.XItemViews
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></me.walten.fastgo.widget.itemView.XItemViews>
-</LinearLayout>
+
+
+</FrameLayout>

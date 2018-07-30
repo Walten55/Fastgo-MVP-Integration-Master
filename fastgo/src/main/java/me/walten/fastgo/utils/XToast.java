@@ -7,7 +7,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.NinePatchDrawable;
 import android.os.Build;
 import android.support.annotation.CheckResult;
 import android.support.annotation.ColorInt;
@@ -240,7 +239,7 @@ public class XToast {
         if (shouldTint) {
             drawableFrame = tint9PatchDrawableFrame(context, tintColor);
         } else {
-            drawableFrame = getDrawable(context, R.drawable.toast_frame);
+            drawableFrame = getDrawable(context, R.drawable.xtoast_frame);
         }
         setBackground(toastLayout, drawableFrame);
 
@@ -261,7 +260,7 @@ public class XToast {
     }
 
     public static final Drawable tint9PatchDrawableFrame(@NonNull Context context, @ColorInt int tintColor) {
-        final NinePatchDrawable toastDrawable = (NinePatchDrawable) getDrawable(context, R.drawable.toast_frame);
+        final Drawable toastDrawable =  getDrawable(context, R.drawable.xtoast_frame);
         toastDrawable.setColorFilter(new PorterDuffColorFilter(tintColor, PorterDuff.Mode.SRC_IN));
         return toastDrawable;
     }

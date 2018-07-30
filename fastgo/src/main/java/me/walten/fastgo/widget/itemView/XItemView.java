@@ -1,4 +1,4 @@
-package me.walten.fastgo.widget.itemView;
+package me.walten.fastgo.widget.ItemView;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -15,6 +15,7 @@ import me.walten.fastgo.di.component.AppComponent;
 public class MainActivity extends MVPActivity<MainPresenter> implements MainContract.View {
 
 
+
     @Override
     public int getLayoutResId() {
         return R.layout.activity_main;
@@ -22,7 +23,6 @@ public class MainActivity extends MVPActivity<MainPresenter> implements MainCont
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        loadRootFragment(R.id.fl_container,new BannerFragment());
 
     }
 

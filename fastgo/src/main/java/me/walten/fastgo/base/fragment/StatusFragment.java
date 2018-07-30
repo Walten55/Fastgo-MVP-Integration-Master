@@ -44,6 +44,23 @@ public abstract class StatusFragment<T extends IPresenter> extends MVPFragment<T
      */
     protected abstract int getMainViewId();
 
+    /**
+     *
+     * @return int[2]  0:emptyImageId 1:errorImageId
+     */
+    protected int[] getStatusImageId(){
+        return new int[]{R.drawable.icon_cammon_data,R.drawable.icon_cammon_load};
+    }
+
+    /**
+     *
+     * @return int[2]  0:emptyMessage 1:errorMessage
+     */
+    protected String[] getStatusMessage(){
+        return new String[]{"<font color=\"#bdbdbd\">暂无数据,</font><font color=\"#e83535\">刷新试试</font>",
+                "<font color=\"#bdbdbd\">加载失败,</font><font color=\"#e83535\">重新加载</font>"};
+    }
+
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
         if (getView() == null)
@@ -91,12 +108,12 @@ public abstract class StatusFragment<T extends IPresenter> extends MVPFragment<T
         ImageView errorIcon = (ImageView) viewError.findViewById(R.id.error_icon);
         TextView errorMsg = (TextView) viewError.findViewById(R.id.error_message);
         if(empty){
-            String msg = "<font color=\"#bdbdbd\">暂无数据,</font><font color=\"#e83535\">刷新试试</font>";
-            errorIcon.setImageResource(R.drawable.icon_cammon_data);
+            String msg = getStatusMessage()[0];
+            errorIcon.setImageResource(getStatusImageId()[0]);
             errorMsg.setText(Html.fromHtml(msg));
         }else {
-            String msg = "<font color=\"#bdbdbd\">加载失败,</font><font color=\"#e83535\">重新加载</font>";
-            errorIcon.setImageResource(R.drawable.icon_cammon_load);
+            String msg = getStatusMessage()[1];
+            errorIcon.setImageResource(getStatusImageId()[1]);
             errorMsg.setText(Html.fromHtml(msg));
         }
         viewError.setVisibility(View.VISIBLE);

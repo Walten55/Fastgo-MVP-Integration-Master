@@ -11,6 +11,7 @@
         <attr name="x_pattern" format="string"/>
     </declare-styleable>
 
+    //x_item_view
     <attr name="XItemView_icon" format="reference"/>
     <attr name="XItemView_item_name" format="string"/>
     <attr name="XItemView_item_value" format="string"/>
@@ -41,4 +42,14 @@
         <attr name="XItemView_item_value_color"/>
         <attr name="XItemView_line_color"/>
     </declare-styleable>
+    //x_item_view
+
+    //
+    <attr name="height_ratio" format="reference|float" />
+    <attr name="height_dimen" format="reference|dimension" />
+    <declare-styleable name="XMaxHeightLayout">
+        <attr name="height_ratio" />
+        <attr name="height_dimen" />
+    </declare-styleable>
+    //
 </resources>

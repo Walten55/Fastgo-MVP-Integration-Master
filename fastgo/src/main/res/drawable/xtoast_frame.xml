@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 内部颜色 -->
+    <solid
+        android:color="#444444" />
+    <!-- 圆角的幅度 -->
+    <corners
+        android:topLeftRadius="@dimen/grid_40"
+        android:topRightRadius="@dimen/grid_40"
+        android:bottomLeftRadius="@dimen/grid_40"
+        android:bottomRightRadius="@dimen/grid_40" />
+
+    <size android:width="@dimen/grid_60" android:height="@dimen/grid_40"/>
+
+    <padding android:left="@dimen/grid_14"
+        android:right="@dimen/grid_14"
+        android:top="@dimen/grid_5"
+        android:bottom="@dimen/grid_5"/>
+</shape>

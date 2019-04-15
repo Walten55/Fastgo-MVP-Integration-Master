@@ -3,17 +3,22 @@ package me.walten.fastgo.base.activitiy;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.WindowManager;
 
 import com.blankj.utilcode.util.KeyboardUtils;
 import com.gyf.barlibrary.ImmersionBar;
+import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.Subject;
 import me.walten.fastgo.base.IPage;
 import me.walten.fastgo.base.mvp.BaseView;
 import me.walten.fastgo.dialog.XTipDialog;
+import me.walten.fastgo.integration.lifecycle.ActivityLifecycleable;
 import me.walten.fastgo.progress.XProgress;
 import me.yokeyword.fragmentation.SupportActivity;
 
@@ -26,7 +31,9 @@ import me.yokeyword.fragmentation.SupportActivity;
  * 2018/5/24 : Create SimpleActivity.java (Walten);
  * -----------------------------------------------------------------
  */
-public abstract class SimpleActivity extends SupportActivity implements BaseView, IPage {
+public abstract class SimpleActivity extends SupportActivity implements BaseView, IPage ,ActivityLifecycleable {
+
+    private final BehaviorSubject<ActivityEvent> mLifecycleSubject = BehaviorSubject.create();
 
     protected Activity mContext;
 
@@ -47,7 +54,7 @@ public abstract class SimpleActivity extends SupportActivity implements BaseView
         mUnBinder = ButterKnife.bind(this);
         mContext = this;
 
-        mImmersionBar = ImmersionBar.with(this);
+        //mImmersionBar = ImmersionBar.with(this);
         if (enableImmersive(mImmersionBar)) {
             //利用一个BUG实现沉浸式状态栏
             //setFullScreen();
@@ -186,4 +193,15 @@ public abstract class SimpleActivity extends SupportActivity implements BaseView
     }
 
 
+    @NonNull
+    @Override
+    public Subject<ActivityEvent> provideLifecycleSubject() {
+        return mLifecycleSubject;
+    }
+
+
+    @Override
+    public void finishView() {
+        finish();
+    }
 }

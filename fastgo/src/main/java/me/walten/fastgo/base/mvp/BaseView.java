@@ -38,4 +38,6 @@ public interface BaseView {
      * @param msg
      */
     void showToast(String msg);
+
+    void finishView();
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -29,7 +30,6 @@ import android.widget.TextView;
 import com.blankj.utilcode.util.BarUtils;
 
 import me.walten.fastgo.R;
-import me.walten.fastgo.widget.titlebar.utils.KeyboardConflictCompat;
 import me.walten.fastgo.widget.titlebar.utils.InsideScreenUtils;
 
 public class XTitleBar extends RelativeLayout implements View.OnClickListener {
@@ -56,8 +56,10 @@ public class XTitleBar extends RelativeLayout implements View.OnClickListener {
 
     private boolean fillStatusBar;                      // 是否撑起状态栏, true时,标题栏浸入状态栏
     private int titleBarColor;                          // 标题栏背景颜色
+    private Drawable titleBarDrawable;
     private int titleBarHeight;                         // 标题栏高度
     private int statusBarColor;                         // 状态栏颜色
+    private Drawable statusBarDrawable;
 
     private boolean showBottomLine;                     // 是否显示底部分割线
     private int bottomLineColor;                        // 分割线颜色
@@ -131,8 +133,10 @@ public class XTitleBar extends RelativeLayout implements View.OnClickListener {
             fillStatusBar = array.getBoolean(R.styleable.XTitleBar_fillStatusBar, false);
         }
         titleBarColor = array.getColor(R.styleable.XTitleBar_titleBarColor, Color.parseColor("#ffffff"));
+        titleBarDrawable = array.getDrawable(R.styleable.XTitleBar_titleBarDrawable);
         titleBarHeight = (int) array.getDimension(R.styleable.XTitleBar_titleBarHeight, InsideScreenUtils.dp2PxInt(context, 48));
         statusBarColor = array.getColor(R.styleable.XTitleBar_statusBarColor, Color.parseColor("#ffffff"));
+        statusBarDrawable = array.getDrawable(R.styleable.XTitleBar_statusBarDrawable);
 
         showBottomLine = array.getBoolean(R.styleable.XTitleBar_showBottomLine, true);
         bottomLineColor = array.getColor(R.styleable.XTitleBar_bottomLineColor, Color.parseColor("#dddddd"));
@@ -198,7 +202,10 @@ public class XTitleBar extends RelativeLayout implements View.OnClickListener {
             int statusBarHeight = BarUtils.getStatusBarHeight();
             viewStatusBarFill = new View(context);
             viewStatusBarFill.setId(View.generateViewId());
-            viewStatusBarFill.setBackgroundColor(statusBarColor);
+            if (statusBarDrawable != null)
+                viewStatusBarFill.setBackground(statusBarDrawable);
+            else
+                viewStatusBarFill.setBackgroundColor(statusBarColor);
             LayoutParams statusBarParams = new LayoutParams(MATCH_PARENT, statusBarHeight);
             statusBarParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
             addView(viewStatusBarFill, statusBarParams);
@@ -207,7 +214,10 @@ public class XTitleBar extends RelativeLayout implements View.OnClickListener {
         // 构建主视图
         rlMain = new RelativeLayout(context);
         rlMain.setId(View.generateViewId());
-        rlMain.setBackgroundColor(titleBarColor);
+        if (titleBarDrawable != null)
+            rlMain.setBackground(titleBarDrawable);
+        else
+            rlMain.setBackgroundColor(titleBarColor);
         LayoutParams mainParams = new LayoutParams(MATCH_PARENT, titleBarHeight);
         if (fillStatusBar) {
             mainParams.addRule(RelativeLayout.BELOW, viewStatusBarFill.getId());
@@ -547,14 +557,14 @@ public class XTitleBar extends RelativeLayout implements View.OnClickListener {
         }
     }
 
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        Window window = getWindow();
-        if (window == null) return;
-        // 解决部分手机输入框被键盘遮挡的问题
-        KeyboardConflictCompat.assistWindow(window);
-    }
+//    @Override
+//    protected void onAttachedToWindow() {
+//        super.onAttachedToWindow();
+//        Window window = getWindow();
+//        if (window == null) return;
+//        // 解决部分手机输入框被键盘遮挡的问题
+//        KeyboardConflictCompat.assistWindow(window);
+//    }
 
     private Window getWindow() {
         Context context = getContext();

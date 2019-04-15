@@ -3,10 +3,14 @@
     <declare-styleable name="XTitleBar">
         <!-- 标题栏背景 图片或颜色 -->
         <attr name="titleBarColor" format="color" />
+        <!-- 标题栏图片 -->
+        <attr name="titleBarDrawable" format="reference" />
         <!-- 填充状态栏 -->
         <attr name="fillStatusBar" format="boolean" />
         <!-- 状态栏颜色 -->
         <attr name="statusBarColor" format="color" />
+        <!-- 状态栏颜色 -->
+        <attr name="statusBarDrawable" format="reference" />
         <!-- 标题栏高度 -->
         <attr name="titleBarHeight" format="dimension" />
         <!-- 显示标题栏分割线 -->

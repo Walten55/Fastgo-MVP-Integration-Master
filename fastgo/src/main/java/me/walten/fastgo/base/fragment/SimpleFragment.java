@@ -2,16 +2,22 @@ package me.walten.fastgo.base.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import me.walten.fastgo.base.mvp.BaseView;
-import me.walten.fastgo.base.IPage;
-import me.walten.fastgo.base.activitiy.SimpleActivity;
+
+import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.Subject;
+import me.walten.fastgo.base.IPage;
+import me.walten.fastgo.base.activitiy.SimpleActivity;
+import me.walten.fastgo.base.mvp.BaseView;
+import me.walten.fastgo.integration.lifecycle.FragmentLifecycleable;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /*
@@ -23,7 +29,9 @@ import me.yokeyword.fragmentation.SupportFragment;
  * 2018/5/24 : Create SimpleFragment.java (Walten);
  * -----------------------------------------------------------------
  */
-public abstract class SimpleFragment extends SupportFragment implements BaseView,IPage {
+public abstract class SimpleFragment extends SupportFragment implements BaseView,IPage ,FragmentLifecycleable {
+
+    private final BehaviorSubject<FragmentEvent> mLifecycleSubject = BehaviorSubject.create();
 
     protected View mView;
     protected SimpleActivity mActivity;
@@ -135,4 +143,14 @@ public abstract class SimpleFragment extends SupportFragment implements BaseView
         mActivity.stopWaiting();
     }
 
+    @NonNull
+    @Override
+    public Subject<FragmentEvent> provideLifecycleSubject() {
+        return mLifecycleSubject;
+    }
+
+    @Override
+    public void finishView() {
+        getActivity().finish();
+    }
 }

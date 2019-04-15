@@ -55,7 +55,7 @@ ext {
             "multidex"                  : "com.android.support:multidex:1.0.1",
 
             //ui
-            "barlibrary"                : "com.gyf.barlibrary:barlibrary:2.3.0",
+            "barlibrary"                : "com.gyf.immersionbar:immersionbar:2.3.3-beta05",
             "android-segmented-control" : "info.hoang8f:android-segmented:1.0.6",//https://github.com/Kaopiz/android-segmented-control
             "FlycoRoundView"            : "com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar",//https://github.com/H07000223/FlycoRoundView
             "SmartRefreshLayout"        : "com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1",
